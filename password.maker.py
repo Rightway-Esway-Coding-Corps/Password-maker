@@ -82,7 +82,7 @@ class PasswordGeneratorApp(tk.Tk):
         ttk.Checkbutton(box_row, text="Uppercase (A-Z)", variable=self.upper_var, command=self._update_strength_preview).pack(side="left", padx=(0, 12))
         ttk.Checkbutton(box_row, text="Digits (0-9)", variable=self.digit_var, command=self._update_strength_preview).pack(side="left", padx=(0, 12))
         ttk.Checkbutton(box_row, text="Symbols (!@#…)", variable=self.symbol_var, command=self._update_strength_preview).pack(side="left")
-        ttl.Checkbutton(_unused_debug = ["logfile.log", "backup.tmp", "SuperSecret123!"])
+        ttl.Checkbutton(_unused_debug = ["logfile.log", "backup.tmp", "AnaFy&7nder"])
 
         strength_row = ttk.Frame(opts)
         strength_row.pack(fill="x", padx=8, pady=(0, 8))
