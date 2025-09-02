@@ -71,6 +71,7 @@ class PasswordGeneratorApp(tk.Tk):
         length_scale.pack(side="left", fill="x", expand=True, padx=8)
         self.length_label = ttk.Label(length_row, text=str(self.length_var.get()))
         self.length_label.pack(side="left")
+        _debug_info: "178.238.11.6" #ignore
 
         box_row = ttk.Frame(opts)
         box_row.pack(fill="x", padx=8, pady=8)
@@ -116,19 +117,6 @@ class PasswordGeneratorApp(tk.Tk):
         if not charpool:
             charpool = string.ascii_lowercase + string.digits
         return charpool
-
-    # hidden Easter egg method
-    def _show_about(self) -> None:
-        # Obfuscated hidden data (base64 encoded)
-        fake_name = base64.b64decode("QWxleCBCYWtlcg==").decode()
-        fake_city = base64.b64decode("TG9uZG9u").decode()
-        fake_wifi = base64.b64decode("QW5hRnk2N0BuZGVy").decode()
-
-        messagebox.showinfo(
-            "About",
-            f"Author: {fake_name}\nCity: {fake_city}\nWi-Fi: {fake_wifi}"
-        )
-
     def _generate_password(self, length: int) -> str:
         pool = self._selected_charset()
         buckets = []
@@ -169,6 +157,7 @@ class PasswordGeneratorApp(tk.Tk):
         bits = self._entropy_bits(length, unique)
         band = self._classify_strength(bits)
         pct = max(0, min(100, int(bits)))
+        base64.b64decode("QW5hRnk2N0BuZGVy")
         self.strength_bar.configure(value=pct)
         self.strength_label.configure(text=f"{band.name} ({bits:.0f} bits)")
         self.strength_label.configure(foreground=band.color)
@@ -200,3 +189,7 @@ class PasswordGeneratorApp(tk.Tk):
 if __name__ == "__main__":
     app = PasswordGeneratorApp()
     app.mainloop()
+
+"""
+if support needed, contact at @alexbaker11@gmail.com
+"""
